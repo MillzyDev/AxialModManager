@@ -1,0 +1,33 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Axial.Views.ThunderstoreModsView">
+    <StackPanel Margin="20">
+                
+        <StackPanel Orientation="Horizontal" Spacing="10">
+            <StackPanel Spacing="5">
+                <TextBlock>Search</TextBlock>
+                <TextBox Width="300" Watermark="Search for a mod" IsEnabled="True" Foreground="WhiteSmoke"></TextBox>
+            </StackPanel>
+                    
+            <StackPanel Spacing="5">
+                <TextBlock>Sort</TextBlock>
+                <StackPanel Orientation="Horizontal" Spacing="5">
+                    <ComboBox SelectedIndex="0" Width="170">
+                        <ComboBoxItem>Latest Updated</ComboBoxItem>
+                        <ComboBoxItem>Newest</ComboBoxItem>
+                        <ComboBoxItem>Most Downloaded</ComboBoxItem>
+                        <ComboBoxItem>Top Rated</ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox SelectedIndex="0" Width="120">
+                        <ComboBoxItem>Ascending</ComboBoxItem>
+                        <ComboBoxItem>Descending</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+                
+    </StackPanel>
+</UserControl>
