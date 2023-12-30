@@ -91,10 +91,6 @@
                         </ListBoxItem>
                         
                         <ListBoxItem>
-                            <TextBlock>Mod Preferences</TextBlock>
-                        </ListBoxItem>
-                        
-                        <ListBoxItem>
                             <TextBlock>Settings</TextBlock>
                         </ListBoxItem>
                     </ListBox>
