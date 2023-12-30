@@ -2,10 +2,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="Axial.Views.DesktopMainView">
+             xmlns:views="clr-namespace:Axial.Views"
+             mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="700"
+             x:Class="Axial.Views.DesktopMainView"
+             Background="#101010">
     
-    <SplitView IsPaneOpen="True">
+    <SplitView IsPaneOpen="True"
+               DisplayMode="CompactInline">
         <SplitView.Pane>
             <StackPanel Margin="5 10">
                 
@@ -86,15 +89,28 @@
                                 </Border>
                             </Grid>
                         </ListBoxItem>
+                        
+                        <ListBoxItem>
+                            <TextBlock>Mod Preferences</TextBlock>
+                        </ListBoxItem>
+                        
+                        <ListBoxItem>
+                            <TextBlock>Settings</TextBlock>
+                        </ListBoxItem>
                     </ListBox>
                 </StackPanel>
                 
             </StackPanel>
         </SplitView.Pane>
+        
         <SplitView.Content>
-            <TextBlock>
-                dsd
-            </TextBlock>
+            <StackPanel Margin="20">
+                
+                <views:ThunderstoreModsView IsVisible="False"/>
+                <views:InstalledModsView IsVisible="False"/>
+                <views:ModDownloadsView IsVisible="False"/>
+                
+            </StackPanel>
         </SplitView.Content>
     </SplitView>
 </UserControl>
