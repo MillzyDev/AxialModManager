@@ -3,8 +3,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:Axial.Views"
+             xmlns:vm="using:Axial.ViewModels"
              mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="700"
              x:Class="Axial.Views.DesktopMainView"
+             x:DataType="vm:DesktopMainViewModel"
              Background="#101010">
     
     <SplitView IsPaneOpen="True"
@@ -47,7 +49,7 @@
                     </TextBlock>
                     -->
                 
-                    <ListBox Margin="0 10">
+                    <ListBox Margin="0 10" SelectionMode="Single,AlwaysSelected" SelectedIndex="{Binding SelectedViewIndex}">
                         <ListBox.Styles>
                             <Style Selector="ListBoxItem:selected /template/ ContentPresenter">
                                 <Setter Property="Background" Value="Chocolate"/>
@@ -100,13 +102,13 @@
         </SplitView.Pane>
         
         <SplitView.Content>
-            <StackPanel Margin="20">
+            <Panel Margin="20">
                 
-                <views:ThunderstoreModsView IsVisible="False"/>
-                <views:InstalledModsView IsVisible="False"/>
-                <views:ModDownloadsView IsVisible="False"/>
+                <views:InstalledModsView IsVisible="False" Name="InstalledModsView"/>
+                <views:ThunderstoreModsView IsVisible="True" Name="ThunderstoreModsView" />
+                <views:ModDownloadsView IsVisible="False" Name="ModDownloadsView"/>
                 
-            </StackPanel>
+            </Panel>
         </SplitView.Content>
     </SplitView>
 </UserControl>
